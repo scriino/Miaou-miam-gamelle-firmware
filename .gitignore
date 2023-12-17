@@ -52,7 +52,7 @@ Mkfile.old
 dkms.conf
 
 
-/Code/Debug
-/Code/Release
+/Gamelle/Debug
+/Gamelle/Release
 *.launch
 *.prefs

@@ -97,9 +97,12 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C3_Init();
   MX_SPI3_Init();
-  MX_TIM4_Init();
   MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
+
+  /*Allumage de la pin En_Reg*/
+  HAL_GPIO_WritePin(GPIO_EN_REG_7V2_GPIO_Port, GPIO_EN_REG_7V2_Pin, GPIO_PIN_SET);
+  HAL_Delay(500U);
 
   /* USER CODE END 2 */
 
@@ -110,6 +113,18 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  /*Allumage de la LED1*/
+	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+	  HAL_Delay(500U);
+	  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+	  HAL_Delay(500U);
+
+	  /*Allumage de la LED2*/
+	  HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
+	  HAL_Delay(500U);
+	  HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
+	  HAL_Delay(500U);
+
   }
   /* USER CODE END 3 */
 }
